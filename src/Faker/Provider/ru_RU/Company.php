@@ -128,7 +128,7 @@ class Company extends \Faker\Provider\Company
         return $inn_base . self::inn10Checksum($inn_base);
     }
 
-    public static function kpp($inn = "")
+    public static function kpp($inn = '')
     {
         if ($inn == "" || strlen($inn) < 4) {
             $inn = self::inn10();
