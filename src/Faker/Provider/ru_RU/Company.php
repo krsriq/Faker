@@ -121,7 +121,7 @@ class Company extends \Faker\Provider\Company
             //Simple generation code for areas in Russian without check for valid
             $area_code = self::numberBetween(1, 91);
         } else {
-            $area_code = intval($area_code);
+            $area_code = (int) $area_code;
         }
         $area_code = str_pad($area_code, 2, '0', STR_PAD_LEFT);
         $inn_base =  $area_code . static::numerify('#######');
