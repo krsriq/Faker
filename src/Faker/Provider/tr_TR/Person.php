@@ -129,7 +129,7 @@ class Person extends \Faker\Provider\Person
 
         $identityArray = array_map('intval', str_split($identityPrefix)); // Creates array from int
         foreach ($identityArray as $index => $digit) {
-            if ($index % 2 == 0) {
+            if ($index % 2 === 0) {
                 $evenSum += $digit;
             } else {
                 $oddSum += $digit;
