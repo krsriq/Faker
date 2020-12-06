@@ -16,7 +16,7 @@ class TCNo
      *
      * @param string $identityPrefix
      * @return string Checksum (two digit)
-     * @deprecated Use {@link \Faker\Provider\tr_TR\Person::tcNoChecksum()} instead
+     * @deprecated use {@link \Faker\Provider\tr_TR\Person::tcNoChecksum()} instead
      * @see \Faker\Provider\tr_TR\Person::tcNoChecksum()
      */
     public static function checksum($identityPrefix)
