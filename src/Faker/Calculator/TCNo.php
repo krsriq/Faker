@@ -3,7 +3,7 @@
 namespace Faker\Calculator;
 
 /**
- * @deprecated Moved to tr_TR\Person, use {@link \Faker\Provider\tr_TR\Person}.
+ * @deprecated moved to tr_TR\Person, use {@link \Faker\Provider\tr_TR\Person}.
  * @see \Faker\Provider\tr_TR\Person
  */
 class TCNo
