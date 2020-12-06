@@ -29,7 +29,7 @@ class TCNo
      *
      * @param string $tcNo
      * @return bool
-     * @deprecated Use {@link \Faker\Provider\tr_TR\Person::tcNoIsValid()} instead
+     * @deprecated use {@link \Faker\Provider\tr_TR\Person::tcNoIsValid()} instead
      * @see \Faker\Provider\tr_TR\Person::tcNoIsValid()
      */
     public static function isValid($tcNo)
