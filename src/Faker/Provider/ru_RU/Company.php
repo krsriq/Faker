@@ -133,7 +133,7 @@ class Company extends \Faker\Provider\Company
         if ($inn === '' || strlen($inn) < 4) {
             $inn = self::inn10();
         }
-        return substr($inn, 0, 4) . "01001";
+        return substr($inn, 0, 4) . '01001';
     }
 
     /**
