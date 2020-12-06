@@ -115,7 +115,7 @@ class Company extends \Faker\Provider\Company
      * @param  string  $area_code
      * @return string
      */
-    public static function inn10($area_code = "")
+    public static function inn10($area_code = '')
     {
         if ($area_code === "" || intval($area_code) == 0) {
             //Simple generation code for areas in Russian without check for valid
