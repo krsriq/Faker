@@ -9,17 +9,17 @@ final class CompanyTest extends TestCase
 {
     public function testINN()
     {
-        self::assertMatchesRegularExpression('/^[0-9]{10}$/', $this->faker->inn);
-        self::assertEquals("77", substr($this->faker->inn("77"), 0, 2));
-        self::assertEquals("02", substr($this->faker->inn(2), 0, 2));
+        self::assertMatchesRegularExpression('/^[0-9]{10}$/', $this->faker->inn10);
+        self::assertEquals("77", substr($this->faker->inn10("77"), 0, 2));
+        self::assertEquals("02", substr($this->faker->inn10(2), 0, 2));
     }
 
     public function testKPP()
     {
         self::assertMatchesRegularExpression('/^[0-9]{9}$/', $this->faker->kpp);
         self::assertEquals("01001", substr($this->faker->kpp, -5, 5));
-        $inn = $this->faker->inn;
-        self::assertEquals(substr($inn, 0, 4), substr($this->faker->kpp($inn), 0, 4));
+        $inn10 = $this->faker->inn10;
+        self::assertEquals(substr($inn10, 0, 4), substr($this->faker->kpp($inn10), 0, 4));
     }
 
     public function testCatchPhrase()
@@ -47,12 +47,12 @@ final class CompanyTest extends TestCase
     /**
      * @dataProvider checksumProvider
      */
-    public function testInnChecksum($inn, $checksum)
+    public function testInn10Checksum($inn10, $checksum)
     {
-        self::assertSame($checksum, $this->faker->innChecksum($inn), $inn);
+        self::assertSame($checksum, $this->faker->inn10Checksum($inn10), $inn10);
     }
 
-    public function innValidatorProvider()
+    public function inn10ValidatorProvider()
     {
         return [
             ['5902179757', true],
@@ -66,11 +66,11 @@ final class CompanyTest extends TestCase
     }
 
     /**
-     * @dataProvider innValidatorProvider
+     * @dataProvider inn10ValidatorProvider
      */
-    public function testInnIsValid($inn, $isValid)
+    public function testInn10IsValid($inn10, $isValid)
     {
-        self::assertSame($isValid, $this->faker->innIsValid($inn), $inn);
+        self::assertSame($isValid, $this->faker->inn10IsValid($inn10), $inn10);
     }
 
     protected function getProviders(): iterable
