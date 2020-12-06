@@ -16,7 +16,6 @@ class Inn
      * @return string Checksum (one digit)
      *@deprecated Use {@link \Faker\Provider\ru_RU\Company::inn10Checksum()} instead
      * @see \Faker\Provider\ru_RU\Company::inn10Checksum()
-     *
      */
     public static function checksum($inn)
     {
@@ -30,7 +29,6 @@ class Inn
      * @return bool
      *@deprecated Use {@link \Faker\Provider\ru_RU\Company::inn10IsValid()} instead
      * @see \Faker\Provider\ru_RU\Company::inn10IsValid()
-     *
      */
     public static function isValid($inn)
     {
