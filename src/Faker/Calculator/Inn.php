@@ -3,7 +3,7 @@
 namespace Faker\Calculator;
 
 /**
- * @deprecated Moved to ru_RU\Company, use {@link \Faker\Provider\ru_RU\Company}.
+ * @deprecated moved to ru_RU\Company, use {@link \Faker\Provider\ru_RU\Company}.
  * @see \Faker\Provider\ru_RU\Company
  */
 class Inn
