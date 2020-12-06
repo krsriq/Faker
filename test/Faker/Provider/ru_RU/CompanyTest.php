@@ -9,7 +9,6 @@ final class CompanyTest extends TestCase
 {
     public function testINN()
     {
-
         self::assertMatchesRegularExpression('/^[0-9]{10}$/', $this->faker->inn10);
         self::assertEquals('77', substr($this->faker->inn10('77'), 0, 2));
         self::assertEquals('02', substr($this->faker->inn10(2), 0, 2));
