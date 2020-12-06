@@ -27,7 +27,7 @@ class Inn
      *
      * @param string $inn
      * @return bool
-     * @deprecated Use {@link \Faker\Provider\ru_RU\Company::inn10IsValid()} instead
+     * @deprecated use {@link \Faker\Provider\ru_RU\Company::inn10IsValid()} instead
      * @see \Faker\Provider\ru_RU\Company::inn10IsValid()
      */
     public static function isValid($inn)
