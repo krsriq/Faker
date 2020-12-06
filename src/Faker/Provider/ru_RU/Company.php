@@ -101,6 +101,19 @@ class Company extends \Faker\Provider\Company
      *
      * @param  string  $area_code
      * @return string
+     * @deprecated use {@link \Faker\Provider\ru_RU\Company::inn10()} instead
+     * @see \Faker\Provider\ru_RU\Company::inn10()
+     */
+    public static function inn($area_code = "")
+    {
+        return self::inn10($area_code);
+    }
+
+    /**
+     * Generates a Russian Taxpayer Personal Identification Number
+     *
+     * @param  string  $area_code
+     * @return string
      */
     public static function inn10($area_code = "")
     {
