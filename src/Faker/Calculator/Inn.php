@@ -14,7 +14,7 @@ class Inn
      *
      * @param string $inn
      * @return string Checksum (one digit)
-     *@deprecated Use {@link \Faker\Provider\ru_RU\Company::inn10Checksum()} instead
+     * @deprecated use {@link \Faker\Provider\ru_RU\Company::inn10Checksum()} instead
      * @see \Faker\Provider\ru_RU\Company::inn10Checksum()
      */
     public static function checksum($inn)
