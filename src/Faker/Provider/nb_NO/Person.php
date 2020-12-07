@@ -283,11 +283,11 @@ class Person extends \Faker\Provider\Person
     /**
      * National Personal Identity number (personnummer)
      * @link https://no.wikipedia.org/wiki/Personnummer
-     * @param \DateTime $birthdate
+     * @param \DateTimeInterface|null $birthdate
      * @param string $gender Person::GENDER_MALE || Person::GENDER_FEMALE
      * @return string on format DDMMYY#####
      */
-    public function personalIdentityNumber(\DateTime $birthdate = null, $gender = null)
+    public function personalIdentityNumber(\DateTimeInterface $birthdate = null, $gender = null)
     {
         if (!$birthdate) {
             $birthdate = \Faker\Provider\DateTime::dateTimeThisCentury();

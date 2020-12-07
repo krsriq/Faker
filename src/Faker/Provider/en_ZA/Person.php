@@ -135,13 +135,13 @@ class Person extends \Faker\Provider\Person
     /**
      * @link https://en.wikipedia.org/wiki/National_identification_number#South_Africa
      *
-     * @param \DateTime $birthdate
+     * @param \DateTimeInterface|null $birthdate
      * @param bool      $citizen
      * @param string    $gender
      *
      * @return string
      */
-    public function idNumber(\DateTime $birthdate = null, $citizen = true, $gender = null)
+    public function idNumber(\DateTimeInterface $birthdate = null, $citizen = true, $gender = null)
     {
         if (!$birthdate) {
             $birthdate = $this->generator->dateTimeThisCentury();

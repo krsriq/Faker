@@ -109,10 +109,10 @@ class Person extends \Faker\Provider\Person
     /**
      * National Personal Identity number (personas kods)
      * @link https://en.wikipedia.org/wiki/National_identification_number#Latvia
-     * @param \DateTime $birthdate
+     * @param \DateTimeInterface|null $birthdate
      * @return string on format XXXXXX-XXXXX
      */
-    public function personalIdentityNumber(\DateTime $birthdate = null)
+    public function personalIdentityNumber(\DateTimeInterface $birthdate = null)
     {
         if (!$birthdate) {
             $birthdate = DateTime::dateTimeThisCentury();

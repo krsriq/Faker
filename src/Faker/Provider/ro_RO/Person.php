@@ -188,12 +188,12 @@ class Person extends \Faker\Provider\Person
     /**
      * https://ro.wikipedia.org/wiki/Cod_numeric_personal#S
      *
-     * @param \DateTime $dateOfBirth
+     * @param \DateTimeInterface $dateOfBirth
      * @param bool $isResident
      * @param string $gender
      * @return int
      */
-    protected static function getGenderDigit(\DateTime $dateOfBirth, $gender, $isResident)
+    protected static function getGenderDigit(\DateTimeInterface $dateOfBirth, $gender, $isResident)
     {
         if (!$isResident) {
             return 9;

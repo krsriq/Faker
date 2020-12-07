@@ -9,11 +9,11 @@ class Person extends \Faker\Provider\Person
     /**
      * National Registration Identity Card number
      *
-     * @param \DateTime|null $birthDate birth date
+     * @param \DateTimeInterface|null $birthDate birth date
      *
      * @return string in format S1234567D or T1234567J
      */
-    public static function nric(?\DateTime $birthDate = null): string
+    public static function nric(?\DateTimeInterface $birthDate = null): string
     {
         return self::singaporeId($birthDate, false);
     }
@@ -21,11 +21,11 @@ class Person extends \Faker\Provider\Person
     /**
      * Foreign Identification Number
      *
-     * @param \DateTime|null $issueDate issue date
+     * @param \DateTimeInterface|null $issueDate issue date
      *
      * @return string in format F1234567N or G1234567X
      */
-    public static function fin(?\DateTime $issueDate = null): string
+    public static function fin(?\DateTimeInterface $issueDate = null): string
     {
         return self::singaporeId($issueDate, true);
     }
@@ -33,12 +33,12 @@ class Person extends \Faker\Provider\Person
     /**
      * Singapore NRIC (citizens) or FIN (foreigners) number
      *
-     * @param \DateTime|null $issueDate birth/issue date
+     * @param \DateTimeInterface|null $issueDate birth/issue date
      * @param bool           $foreigner whether a person is foreigner or citizen
      *
      * @return string in format S1234567D, T1234567J, F1234567N or G1234567X
      */
-    public static function singaporeId(?\DateTime $issueDate = null, bool $foreigner = false): string
+    public static function singaporeId(?\DateTimeInterface $issueDate = null, bool $foreigner = false): string
     {
         if ($issueDate === null) {
             $issueDate = DateTime::dateTimeThisCentury();

@@ -123,10 +123,10 @@ class Person extends \Faker\Provider\Person
     /**
      * Generates a random Austrian Social Security number.
      * @link https://de.wikipedia.org/wiki/Sozialversicherungsnummer#.C3.96sterreich
-     * @param  \DateTime|null  $birthdate
+     * @param  \DateTimeInterface|null  $birthdate
      * @return string
      */
-    public static function ssn(\DateTime $birthdate = null)
+    public static function ssn(\DateTimeInterface $birthdate = null)
     {
         $birthdate = $birthdate ?? DateTime::dateTimeThisCentury();
 

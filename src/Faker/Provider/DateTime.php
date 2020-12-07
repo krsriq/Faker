@@ -297,12 +297,12 @@ class DateTime extends Base
     /**
      * Internal method to set the time zone on a DateTime.
      *
-     * @param \DateTime $dt
+     * @param \DateTimeInterface $dt
      * @param string|null $timezone
      *
      * @return \DateTime
      */
-    private static function setTimezone(\DateTime $dt, $timezone)
+    private static function setTimezone(\DateTimeInterface $dt, $timezone)
     {
         return $dt->setTimezone(new \DateTimeZone(static::resolveTimezone($timezone)));
     }

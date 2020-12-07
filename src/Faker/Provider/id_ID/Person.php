@@ -298,10 +298,10 @@ class Person extends \Faker\Provider\Person
      * @link https://en.wikipedia.org/wiki/National_identification_number#Indonesia
      *
      * @param null|string $gender
-     * @param null|\DateTime $birthDate
+     * @param \DateTimeInterface|null $birthDate
      * @return string
      */
-    public function nik($gender = null, $birthDate = null)
+    public function nik($gender = null, \DateTimeInterface $birthDate = null)
     {
         # generate first numbers (region data)
         $nik = $this->birthPlaceCode();
