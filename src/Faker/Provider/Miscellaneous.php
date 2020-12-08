@@ -319,7 +319,7 @@ class Miscellaneous extends Base
     public static function emoji()
     {
         $randomElement = static::randomElement(static::$emoji);
-        $unicodeHex = preg_replace("/\\\uD83D\\\uDE([0-9A-F]*)/", "&#x1F6\\1;", $randomElement);
+        $unicodeHex = preg_replace("/\\\uD83D\\\uDE([0-9A-F]*)/", '&#x1F6\\1;', $randomElement);
         return html_entity_decode($unicodeHex, ENT_NOQUOTES, 'UTF-8');
     }
 }
