@@ -10,7 +10,7 @@ class Miscellaneous extends Base
      *
      * U+1F600 - U+1F637 in Unicode Codepoint Escape Syntax
      */
-    public static $emoji = [
+    protected static $emoji = [
         "\u{1F600}", "\u{1F601}", "\u{1F602}", "\u{1F603}",
         "\u{1F604}", "\u{1F605}", "\u{1F606}", "\u{1F607}",
         "\u{1F608}", "\u{1F609}", "\u{1F60A}", "\u{1F60B}",
