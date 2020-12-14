@@ -30,8 +30,8 @@ final class PersonTest extends TestCase
 
     /**
      * @dataProvider tcNoChecksumProvider
-     * @param $tcNo
-     * @param $checksum
+     * @param string $tcNo
+     * @param string $checksum
      */
     public function testTcNoChecksum($tcNo, $checksum)
     {
@@ -54,8 +54,8 @@ final class PersonTest extends TestCase
 
     /**
      * @dataProvider tcNoValidatorProvider
-     * @param $tcNo
-     * @param $isValid
+     * @param string $tcNo
+     * @param bool $isValid
      */
     public function testIsValid($tcNo, $isValid)
     {
