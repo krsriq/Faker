@@ -253,7 +253,7 @@ class Generator
     public function withMaybe(float $weight = 0.5, $default = null)
     {
         if (mt_rand(1, 100) <= (100*$weight)) {
-          return $this;
+            return $this;
         }
 
         return new DefaultGenerator($default);
