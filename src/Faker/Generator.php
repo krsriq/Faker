@@ -264,6 +264,7 @@ class Generator
      * output. If the validator fails, the generator will try again.
      *
      * @example $faker->withValid(fn($v) => strlen($v) > 3))->name();
+     *
      * @return self
      */
     public function withValid(callable $validator, int $maxRetries = 10000)
