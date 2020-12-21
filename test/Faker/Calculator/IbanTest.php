@@ -85,7 +85,7 @@ final class IbanTest extends TestCase
      */
     public function testChecksum($iban, $checksum)
     {
-        $this->assertEquals($checksum, Iban::checksum($iban), $iban);
+        self::assertEquals($checksum, Iban::checksum($iban), $iban);
     }
 
     public function validatorProvider()
@@ -158,7 +158,6 @@ final class IbanTest extends TestCase
             ['VG96VPVG0000012345678901',               true],
             ['YY24KIHB12476423125915947930915268',     true],
             ['ZZ25VLQT382332233206588011313776421',    true],
-
 
             ['AL4721211009000000023569874',           false],
             ['AD120001203020035910010',               false],
@@ -235,7 +234,7 @@ final class IbanTest extends TestCase
      */
     public function testIsValid($iban, $isValid)
     {
-        $this->assertEquals($isValid, Iban::isValid($iban), $iban);
+        self::assertEquals($isValid, Iban::isValid($iban), $iban);
     }
 
     public function alphaToNumberProvider()
@@ -275,7 +274,7 @@ final class IbanTest extends TestCase
      */
     public function testAlphaToNumber($letter, $number)
     {
-        $this->assertEquals($number, Iban::alphaToNumber($letter), $letter);
+        self::assertEquals($number, Iban::alphaToNumber($letter), $letter);
     }
 
     public function mod97Provider()
@@ -289,17 +288,18 @@ final class IbanTest extends TestCase
         ];
 
         // 0-200
-        for ($i = 0; $i < 200; $i++) {
+        for ($i = 0; $i < 200; ++$i) {
             $return[] = [(string) $i, $i % 97];
         }
 
         return $return;
     }
+
     /**
      * @dataProvider mod97Provider
      */
     public function testMod97($number, $result)
     {
-        $this->assertEquals($result, Iban::mod97($number), $number);
+        self::assertEquals($result, Iban::mod97($number), $number);
     }
 }

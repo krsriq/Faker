@@ -13,14 +13,14 @@ class Company extends \Faker\Provider\Company
     ];
 
     protected static $bsWords = [
-        []
+        [],
     ];
 
     protected static $catchPhraseWords = [
         ['الخدمات', 'الحلول', 'الانظمة'],
         [
             'الذهبية', 'الذكية', 'المتطورة', 'المتقدمة', 'الدولية', 'المتخصصه', 'السريعة',
-            'المثلى', 'الابداعية', 'المتكاملة', 'المتغيرة', 'المثالية'
+            'المثلى', 'الابداعية', 'المتكاملة', 'المتغيرة', 'المثالية',
         ],
     ];
 
@@ -30,6 +30,7 @@ class Company extends \Faker\Provider\Company
 
     /**
      * @example 'مؤسسة'
+     *
      * @return string
      */
     public function companyPrefix()
@@ -43,6 +44,7 @@ class Company extends \Faker\Provider\Company
     public function catchPhrase()
     {
         $result = [];
+
         foreach (static::$catchPhraseWords as &$word) {
             $result[] = static::randomElement($word);
         }
@@ -56,6 +58,7 @@ class Company extends \Faker\Provider\Company
     public function bs()
     {
         $result = [];
+
         foreach (static::$bsWords as &$word) {
             $result[] = static::randomElement($word);
         }
@@ -69,6 +72,7 @@ class Company extends \Faker\Provider\Company
     public static function companyIdNumber()
     {
         $partialValue = static::numerify(700 . str_repeat('#', 6));
+
         return Luhn::generateLuhnNumber($partialValue);
     }
 }

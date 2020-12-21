@@ -16,6 +16,7 @@ final class PaymentTest extends TestCase
 
     /**
      * Validation taken from https://github.com/amnesty/drupal-nif-nie-cif-validator/
+     *
      * @link https://github.com/amnesty/drupal-nif-nie-cif-validator/blob/master/includes/nif-nie-cif.php
      */
     public function isValidCIF($docNumber)
@@ -36,12 +37,15 @@ final class PaymentTest extends TestCase
     {
         $isValid = false;
         $fixedString = strtoupper($givenString);
+
         if (is_int($fixedString[0])) {
             $fixedString = substr('000000000' . $givenString, -9);
         }
+
         if (preg_match($pattern, $fixedString)) {
             $isValid = true;
         }
+
         return $isValid;
     }
 

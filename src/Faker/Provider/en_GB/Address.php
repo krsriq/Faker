@@ -5,10 +5,42 @@ namespace Faker\Provider\en_GB;
 class Address extends \Faker\Provider\Address
 {
     protected static $cityPrefix = ['North', 'East', 'West', 'South', 'New', 'Lake', 'Port'];
-    protected static $citySuffix = ['town', 'ton', 'land', 'ville', 'berg', 'burgh', 'borough', 'bury', 'view', 'port', 'mouth', 'stad', 'furt', 'chester', 'mouth', 'fort', 'haven', 'side', 'shire'];
+    protected static $citySuffix = [
+        'berg', 'borough', 'burgh', 'bury',
+        'chester',
+        'fort', 'furt',
+        'haven',
+        'land',
+        'mouth', 'mouth',
+        'port',
+        'shire', 'side', 'stad',
+        'ton', 'town',
+        'view', 'ville',
+    ];
     protected static $buildingNumber = ['%##', '%#', '%'];
     protected static $streetSuffix = [
-        'Alley', 'Avenue', 'Branch', 'Bridge', 'Brook', 'Brooks', 'Burg', 'Burgs', 'Bypass', 'Camp', 'Canyon', 'Cape', 'Causeway', 'Center', 'Centers', 'Circle', 'Circles', 'Cliff', 'Cliffs', 'Club', 'Common', 'Corner', 'Corners', 'Course', 'Court', 'Courts', 'Cove', 'Coves', 'Creek', 'Crescent', 'Crest', 'Crossing', 'Crossroad', 'Curve', 'Dale', 'Dam', 'Divide', 'Drive', 'Drive', 'Drives', 'Estate', 'Estates', 'Expressway', 'Extension', 'Extensions', 'Fall', 'Falls', 'Ferry', 'Field', 'Fields', 'Flat', 'Flats', 'Ford', 'Fords', 'Forest', 'Forge', 'Forges', 'Fork', 'Forks', 'Fort', 'Garden', 'Gardens', 'Gateway', 'Glen', 'Glens', 'Green', 'Greens', 'Grove', 'Groves', 'Harbour', 'Harbours', 'Haven', 'Heights', 'Highway', 'Hill', 'Hills', 'Hollow', 'Inlet', 'Island', 'Islands', 'Isle', 'Junction', 'Junctions', 'Key', 'Keys', 'Knoll', 'Knolls', 'Lake', 'Lakes', 'Land', 'Landing', 'Lane', 'Light', 'Lights', 'Loaf', 'Lock', 'Locks', 'Locks', 'Lodge', 'Lodge', 'Loop', 'Manor', 'Manors', 'Meadow', 'Meadows', 'Mews', 'Mill', 'Mills', 'Motorway', 'Mount', 'Mountain', 'Mountains', 'Neck', 'Orchard', 'Oval', 'Overpass', 'Park', 'Parks', 'Parkway', 'Parkways', 'Pass', 'Passage', 'Path', 'Pike', 'Pine', 'Pines', 'Place', 'Plain', 'Plains', 'Plaza', 'Point', 'Points', 'Port', 'Ports', 'Radial', 'Ramp', 'Ranch', 'Rapid', 'Rapids', 'Rest', 'Ridge', 'Ridges', 'River', 'Road', 'Road', 'Roads', 'Roads', 'Route', 'Row', 'Rue', 'Run', 'Shoal', 'Shoals', 'Shore', 'Shores', 'Spring', 'Springs', 'Springs', 'Spur', 'Spurs', 'Square', 'Square', 'Squares', 'Squares', 'Station', 'Station', 'Stream', 'Stream', 'Street', 'Streets', 'Summit', 'Terrace', 'Throughway', 'Trace', 'Track', 'Trafficway', 'Trail', 'Tunnel', 'Turnpike', 'Underpass', 'Union', 'Unions', 'Valley', 'Valleys', 'Via', 'Viaduct', 'View', 'Views', 'Village', 'Villages', 'Ville', 'Vista', 'Vista', 'Walk', 'Walks', 'Wall', 'Way', 'Ways', 'Well', 'Wells'
+        'Alley', 'Avenue',
+        'Branch', 'Bridge', 'Brook', 'Brooks', 'Burg', 'Burgs', 'Bypass',
+        'Camp', 'Canyon', 'Cape', 'Causeway', 'Center', 'Centers', 'Circle', 'Circles', 'Cliff', 'Cliffs', 'Club', 'Common', 'Corner', 'Corners', 'Course', 'Court', 'Courts', 'Cove', 'Coves', 'Creek', 'Crescent', 'Crest', 'Crossing', 'Crossroad', 'Curve',
+        'Dale', 'Dam', 'Divide', 'Drive', 'Drive', 'Drives',
+        'Estate', 'Estates', 'Expressway', 'Extension', 'Extensions',
+        'Fall', 'Falls', 'Ferry', 'Field', 'Fields', 'Flat', 'Flats', 'Ford', 'Fords', 'Forest', 'Forge', 'Forges', 'Fork', 'Forks', 'Fort',
+        'Garden', 'Gardens', 'Gateway', 'Glen', 'Glens', 'Green', 'Greens', 'Grove', 'Groves',
+        'Harbour', 'Harbours', 'Haven', 'Heights', 'Highway', 'Hill', 'Hills', 'Hollow',
+        'Inlet', 'Island', 'Islands', 'Isle',
+        'Junction', 'Junctions',
+        'Key', 'Keys', 'Knoll', 'Knolls',
+        'Lake', 'Lakes', 'Land', 'Landing', 'Lane', 'Light', 'Lights', 'Loaf', 'Lock', 'Locks', 'Locks', 'Lodge', 'Lodge', 'Loop',
+        'Manor', 'Manors', 'Meadow', 'Meadows', 'Mews', 'Mill', 'Mills', 'Motorway', 'Mount', 'Mountain', 'Mountains',
+        'Neck',
+        'Orchard', 'Oval', 'Overpass',
+        'Park', 'Parks', 'Parkway', 'Parkways', 'Pass', 'Passage', 'Path', 'Pike', 'Pine', 'Pines', 'Place', 'Plain', 'Plains', 'Plaza', 'Point', 'Points', 'Port', 'Ports',
+        'Radial', 'Ramp', 'Ranch', 'Rapid', 'Rapids', 'Rest', 'Ridge', 'Ridges', 'River', 'Road', 'Road', 'Roads', 'Roads', 'Route', 'Row', 'Rue', 'Run',
+        'Shoal', 'Shoals', 'Shore', 'Shores', 'Spring', 'Springs', 'Springs', 'Spur', 'Spurs', 'Square', 'Square', 'Squares', 'Squares', 'Station', 'Station', 'Stream', 'Stream', 'Street', 'Streets', 'Summit',
+        'Terrace', 'Throughway', 'Trace', 'Track', 'Trafficway', 'Trail', 'Tunnel', 'Turnpike',
+        'Underpass', 'Union', 'Unions',
+        'Valley', 'Valleys', 'Via', 'Viaduct', 'View', 'Views', 'Village', 'Villages', 'Ville', 'Vista', 'Vista',
+        'Walk', 'Walks', 'Wall', 'Way', 'Ways', 'Well', 'Wells',
     ];
 
     protected static $postcode = [
@@ -53,11 +85,11 @@ class Address extends \Faker\Provider\Address
         'PE29 2HJ', 'LS1 9QA', 'BN14 7AR', 'BS5 8PJ', 'OX3 7PJ', 'W6 7AN', 'S60 2PT', 'G12 9BH', 'IP5 1LR', 'B26 3SX', 'PE21 8PT', 'RM14 2LD',
         'PL9 9NN', 'NG20 0JZ', 'W1K 7AF', 'AB31 4DX', 'PL1 4EH', 'IP19 0NS', 'LS28 9NF', 'CH64 3TH', 'G13 1XN', 'NG5 1JR', 'W10 6DY', 'BS27 3XD',
         'ST21 6SR', 'PL4 9RB', 'BA15 2QE', 'TR20 9RG', 'NG34 9HJ', 'BD22 9DN', 'LE4 4JR', 'KA9 2RN', 'W1G 6JQ', 'B14 5TF', 'SA16 0HY', 'N8 7AU',
-        'LE17 5PD', 'PE25 2RA', 'SE19 2BG', 'OX12 8PJ', 'DY5 3EH', 'NG19 7QJ', 'G43 1HQ'
+        'LE17 5PD', 'PE25 2RA', 'SE19 2BG', 'OX12 8PJ', 'DY5 3EH', 'NG19 7QJ', 'G43 1HQ',
     ];
 
     protected static $county = [
-        'Aberdeenshire', 'Anglesey', 'Angus', 'Argyll', 'Ayrshire', 'Banffshire', 'Bedfordshire', 'Berwickshire', 'Breconshire', 'Buckinghamshire', 'Bute', 'Caernarvonshire', 'Caithness', 'Cambridgeshire', 'Cardiganshire', 'Carmarthenshire', 'Cheshire', 'Clackmannanshire', 'Cornwall', 'Isles of Scilly', 'Cumbria', 'Denbighshire', 'Derbyshire', 'Devon', 'Dorset', 'Dumbartonshire', 'Dumfriesshire', 'Durham', 'East Lothian', 'East Sussex', 'Essex', 'Fife', 'Flintshire', 'Glamorgan', 'Gloucestershire', 'Greater London', 'Greater Manchester', 'Hampshire', 'Hertfordshire', 'Inverness', 'Kent', 'Kincardineshire', 'Kinross-shire', 'Kirkcudbrightshire', 'Lanarkshire', 'Lancashire', 'Leicestershire', 'Lincolnshire', 'London', 'Merionethshire', 'Merseyside', 'Midlothian', 'Monmouthshire', 'Montgomeryshire', 'Moray', 'Nairnshire', 'Norfolk', 'North Yorkshire', 'Northamptonshire', 'Northumberland', 'Nottinghamshire', 'Orkney', 'Oxfordshire', 'Peebleshire', 'Pembrokeshire', 'Perthshire', 'Radnorshire', 'Renfrewshire', 'Ross & Cromarty', 'Roxburghshire', 'Selkirkshire', 'Shetland', 'Shropshire', 'Somerset', 'South Yorkshire', 'Staffordshire', 'Stirlingshire', 'Suffolk', 'Surrey', 'Sutherland', 'Tyne and Wear', 'Warwickshire', 'West Lothian', 'West Midlands', 'West Sussex', 'West Yorkshire', 'Wigtownshire', 'Wiltshire', 'Worcestershire'
+        'Aberdeenshire', 'Anglesey', 'Angus', 'Argyll', 'Ayrshire', 'Banffshire', 'Bedfordshire', 'Berwickshire', 'Breconshire', 'Buckinghamshire', 'Bute', 'Caernarvonshire', 'Caithness', 'Cambridgeshire', 'Cardiganshire', 'Carmarthenshire', 'Cheshire', 'Clackmannanshire', 'Cornwall', 'Isles of Scilly', 'Cumbria', 'Denbighshire', 'Derbyshire', 'Devon', 'Dorset', 'Dumbartonshire', 'Dumfriesshire', 'Durham', 'East Lothian', 'East Sussex', 'Essex', 'Fife', 'Flintshire', 'Glamorgan', 'Gloucestershire', 'Greater London', 'Greater Manchester', 'Hampshire', 'Hertfordshire', 'Inverness', 'Kent', 'Kincardineshire', 'Kinross-shire', 'Kirkcudbrightshire', 'Lanarkshire', 'Lancashire', 'Leicestershire', 'Lincolnshire', 'London', 'Merionethshire', 'Merseyside', 'Midlothian', 'Monmouthshire', 'Montgomeryshire', 'Moray', 'Nairnshire', 'Norfolk', 'North Yorkshire', 'Northamptonshire', 'Northumberland', 'Nottinghamshire', 'Orkney', 'Oxfordshire', 'Peebleshire', 'Pembrokeshire', 'Perthshire', 'Radnorshire', 'Renfrewshire', 'Ross & Cromarty', 'Roxburghshire', 'Selkirkshire', 'Shetland', 'Shropshire', 'Somerset', 'South Yorkshire', 'Staffordshire', 'Stirlingshire', 'Suffolk', 'Surrey', 'Sutherland', 'Tyne and Wear', 'Warwickshire', 'West Lothian', 'West Midlands', 'West Sussex', 'West Yorkshire', 'Wigtownshire', 'Wiltshire', 'Worcestershire',
     ];
 
     protected static $country = [
@@ -85,7 +117,7 @@ class Address extends \Faker\Provider\Address
         'Vanuatu', 'Venezuela', 'Vietnam',
         'Wallis and Futuna', 'Western Sahara',
         'Yemen',
-        'Zambia', 'Zimbabwe'
+        'Zambia', 'Zimbabwe',
     ];
 
     protected static $cityFormats = [
@@ -96,7 +128,7 @@ class Address extends \Faker\Provider\Address
     ];
     protected static $streetNameFormats = [
         '{{firstName}} {{streetSuffix}}',
-        '{{lastName}} {{streetSuffix}}'
+        '{{lastName}} {{streetSuffix}}',
     ];
     protected static $streetAddressFormats = [
         '{{buildingNumber}} {{streetName}}',

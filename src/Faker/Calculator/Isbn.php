@@ -12,12 +12,12 @@ class Isbn
 
     /**
      * ISBN-10 check digit
+     *
      * @link http://en.wikipedia.org/wiki/International_Standard_Book_Number#ISBN-10_check_digits
      *
-     * @param  string           $input ISBN without check-digit
-     * @throws \LengthException When wrong input length passed
+     * @param string $input ISBN without check-digit
      *
-     * @return string
+     * @throws \LengthException When wrong input length passed
      */
     public static function checksum(string $input): string
     {
@@ -46,8 +46,6 @@ class Isbn
      * Checks whether the provided number is a valid ISBN-10 number
      *
      * @param string $isbn ISBN to check
-     *
-     * @return bool
      */
     public static function isValid(string $isbn): bool
     {

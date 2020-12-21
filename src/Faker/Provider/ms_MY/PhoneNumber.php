@@ -7,15 +7,15 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
     protected static $formats = [
         '{{mobileNumber}}',
         '{{fixedLineNumber}}',
-        '{{voipNumber}}'
+        '{{voipNumber}}',
     ];
 
     protected static $plusSymbol = [
-        '+'
+        '+',
     ];
 
     protected static $countryCodePrefix = [
-        '6'
+        '6',
     ];
 
     /**
@@ -79,11 +79,11 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
      * @link https://en.wikipedia.org/wiki/Telephone_numbers_in_Malaysia#Mobile_phone_codes_and_IP_telephony
      */
     protected static $voipNumberWithFormatting = [
-        '015-{{zeroOneFivePrefix}}## ####'
+        '015-{{zeroOneFivePrefix}}## ####',
     ];
 
     protected static $voipNumber = [
-        '015{{zeroOneFivePrefix}}######'
+        '015{{zeroOneFivePrefix}}######',
     ];
 
     /**
@@ -92,7 +92,7 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
      * @example '+6012-345-6789'
      *
      * @param bool $countryCodePrefix true, false
-     * @param bool $formatting true, false
+     * @param bool $formatting        true, false
      *
      * @return string
      */
@@ -106,9 +106,9 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
 
         if ($countryCodePrefix) {
             return static::countryCodePrefix($formatting) . static::numerify($this->generator->parse($format));
-        } else {
-            return static::numerify($this->generator->parse($format));
         }
+
+        return static::numerify($this->generator->parse($format));
     }
 
     /**
@@ -153,7 +153,7 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
      * @example '+603-4567-8912'
      *
      * @param bool $countryCodePrefix true, false
-     * @param bool $formatting true, false
+     * @param bool $formatting        true, false
      *
      * @return string
      */
@@ -167,9 +167,9 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
 
         if ($countryCodePrefix) {
             return static::countryCodePrefix($formatting) . static::numerify($this->generator->parse($format));
-        } else {
-            return static::numerify($this->generator->parse($format));
         }
+
+        return static::numerify($this->generator->parse($format));
     }
 
     /**
@@ -178,7 +178,7 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
      * @example '+6015-678-9234'
      *
      * @param bool $countryCodePrefix true, false
-     * @param bool $formatting true, false
+     * @param bool $formatting        true, false
      *
      * @return string
      */
@@ -192,9 +192,9 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
 
         if ($countryCodePrefix) {
             return static::countryCodePrefix($formatting) . static::numerify($this->generator->parse($format));
-        } else {
-            return static::numerify($this->generator->parse($format));
         }
+
+        return static::numerify($this->generator->parse($format));
     }
 
     /**
@@ -210,8 +210,8 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
     {
         if ($formatting) {
             return static::randomElement(static::$plusSymbol) . static::randomElement(static::$countryCodePrefix);
-        } else {
-            return static::randomElement(static::$countryCodePrefix);
         }
+
+        return static::randomElement(static::$countryCodePrefix);
     }
 }

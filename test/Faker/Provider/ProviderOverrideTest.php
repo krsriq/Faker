@@ -25,6 +25,7 @@ final class ProviderOverrideTest extends TestCase
 
     /**
      * @dataProvider localeDataProvider
+     *
      * @param string $locale
      */
     public function testAddress($locale = null)
@@ -37,9 +38,9 @@ final class ProviderOverrideTest extends TestCase
         self::assertMatchesRegularExpression(static::TEST_STRING_REGEX, $faker->country);
     }
 
-
     /**
      * @dataProvider localeDataProvider
+     *
      * @param string $locale
      */
     public function testCompany($locale = null)
@@ -49,9 +50,9 @@ final class ProviderOverrideTest extends TestCase
         self::assertMatchesRegularExpression(static::TEST_STRING_REGEX, $faker->company);
     }
 
-
     /**
      * @dataProvider localeDataProvider
+     *
      * @param string $locale
      */
     public function testDateTime($locale = null)
@@ -62,9 +63,9 @@ final class ProviderOverrideTest extends TestCase
         self::assertMatchesRegularExpression(static::TEST_STRING_REGEX, $faker->timezone);
     }
 
-
     /**
      * @dataProvider localeDataProvider
+     *
      * @param string $locale
      */
     public function testInternet($locale = null)
@@ -83,9 +84,9 @@ final class ProviderOverrideTest extends TestCase
         self::assertMatchesRegularExpression(static::TEST_EMAIL_REGEX, $faker->companyEmail);
     }
 
-
     /**
      * @dataProvider localeDataProvider
+     *
      * @param string $locale
      */
     public function testPerson($locale = null)
@@ -98,9 +99,9 @@ final class ProviderOverrideTest extends TestCase
         self::assertMatchesRegularExpression(static::TEST_STRING_REGEX, $faker->lastName);
     }
 
-
     /**
      * @dataProvider localeDataProvider
+     *
      * @param string $locale
      */
     public function testPhoneNumber($locale = null)
@@ -110,9 +111,9 @@ final class ProviderOverrideTest extends TestCase
         self::assertMatchesRegularExpression(static::TEST_STRING_REGEX, $faker->phoneNumber);
     }
 
-
     /**
      * @dataProvider localeDataProvider
+     *
      * @param string $locale
      */
     public function testUserAgent($locale = null)
@@ -121,7 +122,6 @@ final class ProviderOverrideTest extends TestCase
 
         self::assertMatchesRegularExpression(static::TEST_STRING_REGEX, $faker->userAgent);
     }
-
 
     /**
      * @dataProvider localeDataProvider
@@ -134,52 +134,5 @@ final class ProviderOverrideTest extends TestCase
         $faker = Faker\Factory::create($locale);
 
         self::assertMatchesRegularExpression(static::TEST_STRING_REGEX, $faker->uuid);
-    }
-
-
-    /**
-     * @return array
-     */
-    public function localeDataProvider()
-    {
-        $locales = $this->getAllLocales();
-        $data = [];
-
-        foreach ($locales as $locale) {
-            $data[] = [
-                $locale
-            ];
-        }
-
-        return $data;
-    }
-
-
-    /**
-     * Returns all locales as array values
-     *
-     * @return array
-     */
-    private function getAllLocales()
-    {
-        static $locales = [];
-
-        if (! empty($locales)) {
-            return $locales;
-        }
-
-        // Finding all PHP files in the xx_XX directories
-        $providerDir = __DIR__ . '/../../../src/Faker/Provider';
-        foreach (glob($providerDir . '/*_*/*.php') as $file) {
-            $localisation = basename(dirname($file));
-
-            if (isset($locales[ $localisation ])) {
-                continue;
-            }
-
-            $locales[ $localisation ] = $localisation;
-        }
-
-        return $locales;
     }
 }

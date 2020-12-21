@@ -2,9 +2,6 @@
 
 namespace Faker\Provider\da_DK;
 
-/**
- * @author Antoine Corcy <contact@sbin.dk>
- */
 class Address extends \Faker\Provider\Address
 {
     /**
@@ -53,7 +50,7 @@ class Address extends \Faker\Provider\Address
      * @var array Danish zip code.
      */
     protected static $postcode = [
-        '%###'
+        '%###',
     ];
 
     /**

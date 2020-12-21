@@ -3,8 +3,6 @@
 namespace Faker\Test;
 
 use Faker\Generator;
-use PHPUnit\Framework\Constraint\LogicalNot;
-use PHPUnit\Framework\Constraint\RegularExpression;
 use PHPUnit\Framework\TestCase as BaseTestCase;
 
 abstract class TestCase extends BaseTestCase
@@ -24,32 +22,29 @@ abstract class TestCase extends BaseTestCase
         }
     }
 
-    /**
-     * Asserts that a string matches a given regular expression.
-     *
-     * @throws ExpectationFailedException
-     * @throws \SebastianBergmann\RecursionContext\InvalidArgumentException
-     */
-    public static function assertMatchesRegularExpression(string $pattern, string $string, string $message = ''): void
+    public static function localeDataProvider(): array
     {
-        static::assertThat($string, new RegularExpression($pattern), $message);
+        $locales = [];
+
+        foreach (self::getAllLocales() as $locale) {
+            $locales[$locale] = [$locale];
+        }
+
+        return $locales;
     }
 
-    /**
-     * Asserts that a string does not match a given regular expression.
-     *
-     * @throws ExpectationFailedException
-     * @throws \SebastianBergmann\RecursionContext\InvalidArgumentException
-     */
-    public static function assertDoesNotMatchRegularExpression(string $pattern, string $string, string $message = ''): void
+    protected static function getAllLocales(): array
     {
-        static::assertThat(
-            $string,
-            new LogicalNot(
-                new RegularExpression($pattern)
-            ),
-            $message
-        );
+        return array_map('basename', glob(__DIR__ . '/../../src/Faker/Provider/*_*', GLOB_ONLYDIR));
+    }
+
+    protected function loadLocalProvider(string $locale, string $provider): void
+    {
+        $providerClass = "\\Faker\\Provider\\$locale\\$provider";
+
+        if (class_exists($providerClass)) {
+            $this->faker->addProvider(new $providerClass($this->faker));
+        }
     }
 
     protected function getProviders(): iterable

@@ -45,7 +45,7 @@ class Person extends \Faker\Provider\Person
         '8#######' ,
         '90######',
         '98######',
-        '99######'
+        '99######',
     ];
 
     /**
@@ -78,14 +78,15 @@ class Person extends \Faker\Provider\Person
         $sum = 0;
         $factor = 2;
 
-        for ($i = strlen($number); $i > 0; $i--) {
+        for ($i = strlen($number); $i > 0; --$i) {
             $numbers[$i] = substr($number, $i - 1, 1);
             $partial[$i] = $numbers[$i] * $factor;
             $sum += $partial[$i];
+
             if ($factor == $base) {
                 $factor = 1;
             }
-            $factor++;
+            ++$factor;
         }
         $res = $sum % 11;
 
@@ -114,7 +115,7 @@ class Person extends \Faker\Provider\Person
         'Vítor', 'Edgar', 'Kevin', 'Joaquim', 'Igor', 'Ângelo', 'Enzo', 'Valentim', 'Flávio',
         'Joel', 'Fernando', 'Sebastião', 'Tomé', 'César', 'Cláudio', 'Nelson', 'Lisandro', 'Jaime',
         'Gil', 'Mauro', 'Sandro', 'Hélder', 'Matheus', 'William', 'Gaspar', 'Márcio',
-        'Martinho', 'Emanuel', 'Marcos', 'Telmo', 'Davi', 'Wilson'
+        'Martinho', 'Emanuel', 'Marcos', 'Telmo', 'Davi', 'Wilson',
     ];
 
     protected static $firstNameFemale = [

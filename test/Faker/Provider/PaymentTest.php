@@ -12,30 +12,9 @@ use Faker\Test\TestCase;
 
 final class PaymentTest extends TestCase
 {
-    public function localeDataProvider()
-    {
-        $providerPath = realpath(__DIR__ . '/../../../src/Faker/Provider');
-        $localePaths = array_filter(glob($providerPath . '/*', GLOB_ONLYDIR));
-        foreach ($localePaths as $path) {
-            $parts = explode('/', $path);
-            $locales[] = [$parts[count($parts) - 1]];
-        }
-
-        return $locales;
-    }
-
-    public function loadLocalProviders($locale)
-    {
-        $providerPath = realpath(__DIR__ . '/../../../src/Faker/Provider');
-        if (file_exists($providerPath . '/' . $locale . '/Payment.php')) {
-            $payment = "\\Faker\\Provider\\$locale\\Payment";
-            $this->faker->addProvider(new $payment($this->faker));
-        }
-    }
-
     public function testCreditCardTypeReturnsValidVendorName()
     {
-        self::assertContains($this->faker->creditCardType, ['Visa', 'Visa Retired', 'MasterCard', 'American Express', 'Discover Card']);
+        self::assertContains($this->faker->creditCardType, ['Visa', 'Visa Retired', 'MasterCard', 'American Express', 'Discover Card', 'JCB']);
     }
 
     public function creditCardNumberProvider()
@@ -44,7 +23,8 @@ final class PaymentTest extends TestCase
             ['Discover Card', '/^6011\d{12}$/'],
             ['Visa', '/^4\d{15}$/'],
             ['Visa Retired', '/^4\d{12}$/'],
-            ['MasterCard', '/^(5[1-5]|2[2-7])\d{14}$/']
+            ['MasterCard', '/^(5[1-5]|2[2-7])\d{14}$/'],
+            ['JCB', '/^35(28|89)\d{12,15}$/'],
         ];
     }
 
@@ -153,16 +133,18 @@ final class PaymentTest extends TestCase
         if (!isset($this->ibanFormats[$countryCode])) {
             // No IBAN format available
             self::markTestSkipped("bankAccountNumber not implemented for country $countryCode");
+
             return;
         }
 
-        $this->loadLocalProviders($locale);
+        $this->loadLocalProvider($locale, 'Payment');
 
         try {
             $iban = $this->faker->bankAccountNumber;
         } catch (\InvalidArgumentException $e) {
             // Not implemented, nothing to test
             self::markTestSkipped("bankAccountNumber not implemented for $locale");
+
             return;
         }
 
@@ -176,11 +158,14 @@ final class PaymentTest extends TestCase
     public function ibanFormatProvider()
     {
         $return = [];
+
         foreach ($this->ibanFormats as $countryCode => $regex) {
             $return[] = [$countryCode, $regex];
         }
+
         return $return;
     }
+
     /**
      * @dataProvider ibanFormatProvider
      */
@@ -198,8 +183,11 @@ final class PaymentTest extends TestCase
     protected function getProviders(): iterable
     {
         yield new BaseProvider($this->faker);
+
         yield new DateTimeProvider($this->faker);
+
         yield new PersonProvider($this->faker);
+
         yield new PaymentProvider($this->faker);
     }
 }

@@ -20,6 +20,7 @@ class Text extends \Faker\Provider\Text
      * Language: Japanese
      *
      * @see http://www.aozora.gr.jp/cards/000081/files/43737_19215.html
+     *
      * @var string
      */
     protected static $baseText = <<<'EOT'
@@ -598,11 +599,13 @@ EOT;
     protected static function explode($text)
     {
         $chars = [];
+
         foreach (preg_split('//u', preg_replace('/\s+/u', '', $text)) as $char) {
             if ($char !== '') {
                 $chars[] = $char;
             }
         }
+
         return $chars;
     }
 
