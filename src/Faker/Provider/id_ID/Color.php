@@ -5,10 +5,10 @@ namespace Faker\Provider\id_ID;
 class Color extends \Faker\Provider\Color
 {
     /**
-     * @link https://id.wikipedia.org/wiki/Warna
-     * @link https://id.wikipedia.org/wiki/Kategori:Warna
-     * @link https://id.wikipedia.org/wiki/Warna_tersier
-     **/
+     * @see https://id.wikipedia.org/wiki/Warna
+     * @see https://id.wikipedia.org/wiki/Kategori:Warna
+     * @see https://id.wikipedia.org/wiki/Warna_tersier
+     */
 
     protected static $safeColorNames = ['abu-abu', 'biru', 'biru dongker', 'biru laut', 'cokelat',
         'emas', 'hijau', 'hitam', 'jingga', 'krem', 'kuning', 'magenta', 'mawar', 'merah', 'merah jambu',
@@ -16,8 +16,8 @@ class Color extends \Faker\Provider\Color
     ];
 
     /**
-     * @link https://id.wikipedia.org/wiki/Daftar_warna
-     **/
+     * @see https://id.wikipedia.org/wiki/Daftar_warna
+     */
     protected static $allColorNames = [
         'Abu-Abu', 'Abu-Abu Tua', 'Abu-Abu Muda', 'Abu-Abu Kecokelatan', 'Almond',
         'Biru', 'Biru Baja', 'Biru Dongker', 'Biru Keabu-abuan', 'Biru Kehijauan', 'Biru Keunguan', 'Biru Laut', 'Biru Laut Gelap', 'Biru Laut Terang', 'Biru Langit', 'Biru Langit Muda', 'Biru Langit Tua', 'Biru Malam', 'Biru Muda', 'Biru Nilam', 'Biru Pucat', 'Biru Terang', 'Biru Tua',
