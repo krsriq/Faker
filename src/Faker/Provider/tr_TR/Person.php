@@ -116,7 +116,7 @@ class Person extends \Faker\Provider\Person
      * Generates Turkish Identity Number Checksum
      * Gets first 9 digit as prefix and calculates checksum
      *
-     * @link https://en.wikipedia.org/wiki/Turkish_Identification_Number
+     * @see https://en.wikipedia.org/wiki/Turkish_Identification_Number
      *
      * @param string $identityPrefix
      *
