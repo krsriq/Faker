@@ -15,7 +15,9 @@ class TCNo
      * https://en.wikipedia.org/wiki/Turkish_Identification_Number
      *
      * @param string $identityPrefix
+     *
      * @return string Checksum (two digit)
+     *
      * @deprecated use {@link \Faker\Provider\tr_TR\Person::tcNoChecksum()} instead
      * @see \Faker\Provider\tr_TR\Person::tcNoChecksum()
      */
@@ -28,7 +30,9 @@ class TCNo
      * Checks whether a TCNo has a valid checksum
      *
      * @param string $tcNo
+     *
      * @return bool
+     *
      * @deprecated use {@link \Faker\Provider\tr_TR\Person::tcNoIsValid()} instead
      * @see \Faker\Provider\tr_TR\Person::tcNoIsValid()
      */

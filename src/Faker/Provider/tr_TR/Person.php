@@ -117,7 +117,9 @@ class Person extends \Faker\Provider\Person
      * Gets first 9 digit as prefix and calculates checksum
      *
      * @link https://en.wikipedia.org/wiki/Turkish_Identification_Number
+     *
      * @param string $identityPrefix
+     *
      * @return string Checksum (two digit)
      */
     public static function tcNoChecksum($identityPrefix)
@@ -130,6 +132,7 @@ class Person extends \Faker\Provider\Person
         $evenSum = 0;
 
         $identityArray = array_map('intval', str_split($identityPrefix)); // Creates array from int
+
         foreach ($identityArray as $index => $digit) {
             if ($index % 2 === 0) {
                 $evenSum += $digit;
@@ -148,6 +151,7 @@ class Person extends \Faker\Provider\Person
      * Checks whether a TCNo has a valid checksum
      *
      * @param string $tcNo
+     *
      * @return bool
      */
     public static function tcNoIsValid($tcNo)

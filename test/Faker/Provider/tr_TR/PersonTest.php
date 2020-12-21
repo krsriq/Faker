@@ -24,12 +24,13 @@ final class PersonTest extends TestCase
             ['350630743', '78'],
             ['550600932', '88'],
             ['487932947', '70'],
-            ['168113862', '40']
+            ['168113862', '40'],
         ];
     }
 
     /**
      * @dataProvider tcNoChecksumProvider
+     *
      * @param string $tcNo
      * @param string $checksum
      */
@@ -54,8 +55,9 @@ final class PersonTest extends TestCase
 
     /**
      * @dataProvider tcNoValidatorProvider
+     *
      * @param string $tcNo
-     * @param bool $isValid
+     * @param bool   $isValid
      */
     public function testIsValid($tcNo, $isValid)
     {
