@@ -2,6 +2,8 @@
 
 namespace Faker\Test\Provider\ru_RU;
 
+use Faker\Factory;
+use Faker\Generator;
 use Faker\Provider\ru_RU\Company;
 use Faker\Test\TestCase;
 
@@ -12,9 +14,29 @@ final class CompanyTest extends TestCase
 {
     public function testINN()
     {
-        self::assertMatchesRegularExpression('/^[0-9]{10}$/', $this->faker->inn10);
-        self::assertEquals('77', substr($this->faker->inn10('77'), 0, 2));
-        self::assertEquals('02', substr($this->faker->inn10(2), 0, 2));
+        //        $f2 = (new Generator())->withMaybe(0)->mimeType();
+//        $generator = new Generator();
+//        $f1 = $generator->withUnique()->mimeType();
+//        $f2 = $generator->withUnique()->ext(\Faker\Extension\FileExtension::class)->mimeType();
+//        $f3 = $generator->withUnique()->ext(\Faker\Extension\FileExtension::class)->mimeType();
+        //  $f1 = (new Generator())->withMaybe(0)->ext(\Faker\Extension\FileExtension::class)->mimeType();
+
+        $faker = new Generator();
+        $faker->addProvider(new \Faker\Provider\pt_PT\Person($faker));
+        $tin = $faker->taxpayerIdentificationNumber();
+        $dv = $faker->dvCalcMod11(12);
+
+
+
+        $evenValidator = function($digit) {
+            return $digit % 2 === 0;
+        };
+        $f1 = (new Generator())->withValid($evenValidator)->ext(\Faker\Extension\FileExtension::class)->mimeType();
+
+
+        self::assertMatchesRegularExpression('/^[0-9]{10}$/', $this->faker->inn);
+        self::assertEquals('77', substr($this->faker->inn('77'), 0, 2));
+        self::assertEquals('02', substr($this->faker->inn(2), 0, 2));
     }
 
     public function testKPP()

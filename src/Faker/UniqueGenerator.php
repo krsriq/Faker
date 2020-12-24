@@ -11,6 +11,7 @@ class UniqueGenerator
     protected $generator;
     protected $maxRetries;
     protected $uniques = [];
+    private $ext = false;
 
     /**
      * @param int $maxRetries
@@ -19,6 +20,12 @@ class UniqueGenerator
     {
         $this->generator = $generator;
         $this->maxRetries = $maxRetries;
+    }
+
+    public function ext(string $id)
+    {
+        $this->ext = $this->generator->ext($id);
+        return $this;
     }
 
     /**
@@ -49,7 +56,8 @@ class UniqueGenerator
         $i = 0;
 
         do {
-            $res = call_user_func_array([$this->generator, $name], $arguments);
+            $class = $this->ext ? $this->ext : $this->generator;
+            $res = call_user_func_array([$class, $name], $arguments);
             ++$i;
 
             if ($i > $this->maxRetries) {
@@ -57,6 +65,8 @@ class UniqueGenerator
             }
         } while (array_key_exists(serialize($res), $this->uniques[$name]));
         $this->uniques[$name][serialize($res)] = null;
+
+        $this->ext = false;
 
         return $res;
     }

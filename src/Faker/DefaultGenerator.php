@@ -15,6 +15,11 @@ class DefaultGenerator
         $this->default = $default;
     }
 
+    public function ext()
+    {
+        return $this;
+    }
+
     /**
      * @param string $attribute
      *

@@ -11,6 +11,7 @@ class ValidGenerator
     protected $generator;
     protected $validator;
     protected $maxRetries;
+    private $ext = false;
 
     /**
      * @param callable|null $validator
@@ -28,6 +29,12 @@ class ValidGenerator
         $this->generator = $generator;
         $this->validator = $validator;
         $this->maxRetries = $maxRetries;
+    }
+
+    public function ext($id)
+    {
+        $this->ext = $this->generator->ext($id);
+        return $this;
     }
 
     /**
@@ -55,13 +62,17 @@ class ValidGenerator
         $i = 0;
 
         do {
-            $res = call_user_func_array([$this->generator, $name], $arguments);
+            $class = $this->ext ? $this->ext : $this->generator;
+
+            $res = call_user_func_array([$class, $name], $arguments);
             ++$i;
 
             if ($i > $this->maxRetries) {
                 throw new \OverflowException(sprintf('Maximum retries of %d reached without finding a valid value', $this->maxRetries));
             }
         } while (!call_user_func($this->validator, $res));
+
+        $this->ext = false;
 
         return $res;
     }
