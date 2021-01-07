@@ -345,6 +345,26 @@ class Generator
         return $this->ext(Extension\BloodExtension::class)->bloodGroup();
     }
 
+    public function ean13(): string
+    {
+        return $this->ext(Extension\BarcodeExtension::class)->ean13();
+    }
+
+    public function ean8(): string
+    {
+        return $this->ext(Extension\BarcodeExtension::class)->ean8();
+    }
+
+    public function isbn10(): string
+    {
+        return $this->ext(Extension\BarcodeExtension::class)->isbn10();
+    }
+
+    public function isbn13(): string
+    {
+        return $this->ext(Extension\BarcodeExtension::class)->isbn13();
+    }
+
     public function colorName(): string
     {
         return $this->ext(Extension\ColorExtension::class)->colorName();
