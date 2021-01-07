@@ -11,7 +11,7 @@ use Faker\Extension;
  */
 final class Color implements Extension\ColorExtension
 {
-    protected $allColorNames = [
+    private $colorNames = [
         'AliceBlue', 'AntiqueWhite', 'Aqua', 'Aquamarine',
         'Azure', 'Beige', 'Bisque', 'Black', 'BlanchedAlmond',
         'Blue', 'BlueViolet', 'Brown', 'BurlyWood', 'CadetBlue',
@@ -40,7 +40,7 @@ final class Color implements Extension\ColorExtension
         'Turquoise', 'Violet', 'Wheat', 'White', 'WhiteSmoke', 'Yellow', 'YellowGreen',
     ];
 
-    protected $safeColorNames = [
+    private $safeColorNames = [
         'black', 'maroon', 'green', 'navy', 'olive',
         'purple', 'teal', 'lime', 'blue', 'silver',
         'gray', 'yellow', 'fuchsia', 'aqua', 'white',
@@ -51,7 +51,7 @@ final class Color implements Extension\ColorExtension
      */
     public function colorName(): string
     {
-        return Extension\Helper::randomElement($this->allColorNames);
+        return Extension\Helper::randomElement($this->colorNames);
     }
 
     /**
