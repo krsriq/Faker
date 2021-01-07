@@ -63,8 +63,8 @@ final class ContainerBuilder
         return [
             BarcodeExtension::class => Core\Barcode::class,
             BloodExtension::class => Core\Blood::class,
-            FileExtension::class => Core\File::class,
             ColorExtension::class => Core\Color::class,
+            FileExtension::class => Core\File::class,
         ];
     }
 
