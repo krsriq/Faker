@@ -345,6 +345,56 @@ class Generator
         return $this->ext(Extension\BloodExtension::class)->bloodGroup();
     }
 
+    public function colorName(): string
+    {
+        return $this->ext(Extension\ColorExtension::class)->colorName();
+    }
+
+    public function hexColor(): string
+    {
+        return $this->ext(Extension\ColorExtension::class)->hexColor();
+    }
+
+    public function hslColor(): string
+    {
+        return $this->ext(Extension\ColorExtension::class)->hslColor();
+    }
+
+    public function hslColorAsArray(): array
+    {
+        return $this->ext(Extension\ColorExtension::class)->hslColorAsArray();
+    }
+
+    public function rgbaCssColor(): string
+    {
+        return $this->ext(Extension\ColorExtension::class)->rgbaCssColor();
+    }
+
+    public function rgbColor(): string
+    {
+        return $this->ext(Extension\ColorExtension::class)->rgbColor();
+    }
+
+    public function rgbColorAsArray(): array
+    {
+        return $this->ext(Extension\ColorExtension::class)->rgbColorAsArray();
+    }
+
+    public function rgbCssColor(): string
+    {
+        return $this->ext(Extension\ColorExtension::class)->rgbCssColor();
+    }
+
+    public function safeHexColor(): string
+    {
+        return $this->ext(Extension\ColorExtension::class)->safeHexColor();
+    }
+
+    public function safeColorName(): string
+    {
+        return $this->ext(Extension\ColorExtension::class)->safeColorName();
+    }
+
     protected function callFormatWithMatches($matches)
     {
         return $this->format($matches[1]);

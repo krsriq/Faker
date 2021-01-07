@@ -63,6 +63,7 @@ final class ContainerBuilder
         return [
             BloodExtension::class => Core\Blood::class,
             FileExtension::class => Core\File::class,
+            ColorExtension::class => Core\Color::class,
         ];
     }
 
