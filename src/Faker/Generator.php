@@ -473,51 +473,81 @@ class Generator
         return $this->ext(Extension\NumberExtension::class)->randomNumber((int) $nbDigits, (bool) $strict);
     }
 
+    /**
+     * @example 'NavajoWhite'
+     */
     public function colorName(): string
     {
         return $this->ext(Extension\ColorExtension::class)->colorName();
     }
 
+    /**
+     * @example '#fa3cc2'
+     */
     public function hexColor(): string
     {
         return $this->ext(Extension\ColorExtension::class)->hexColor();
     }
 
+    /**
+     * @example '340,50,20'
+     */
     public function hslColor(): string
     {
         return $this->ext(Extension\ColorExtension::class)->hslColor();
     }
 
+    /**
+     * @example array(340, 50, 20)
+     */
     public function hslColorAsArray(): array
     {
         return $this->ext(Extension\ColorExtension::class)->hslColorAsArray();
     }
 
+    /**
+     * @example 'rgba(0,255,122,0.8)'
+     */
     public function rgbaCssColor(): string
     {
         return $this->ext(Extension\ColorExtension::class)->rgbaCssColor();
     }
 
+    /**
+     * @example '0,255,122'
+     */
     public function rgbColor(): string
     {
         return $this->ext(Extension\ColorExtension::class)->rgbColor();
     }
 
+    /**
+     * @example '[0,255,122]'
+     */
     public function rgbColorAsArray(): array
     {
         return $this->ext(Extension\ColorExtension::class)->rgbColorAsArray();
     }
 
+    /**
+     * @example 'rgb(0,255,122)'
+     */
     public function rgbCssColor(): string
     {
         return $this->ext(Extension\ColorExtension::class)->rgbCssColor();
     }
 
+    /**
+     * @example '#ff0044'
+     */
     public function safeHexColor(): string
     {
         return $this->ext(Extension\ColorExtension::class)->safeHexColor();
     }
 
+    /**
+     * @example 'blue'
+     */
     public function safeColorName(): string
     {
         return $this->ext(Extension\ColorExtension::class)->safeColorName();
